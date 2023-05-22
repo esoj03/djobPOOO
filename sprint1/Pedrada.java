@@ -1,7 +1,6 @@
 package sprint1;
-
-import java.time.LocalDateTime;
-
+import java.time.LocalTime;
+import java.time.Clock;
 public class Pedrada {
     private int id;
     private String username;
@@ -30,16 +29,24 @@ public class Pedrada {
         return new Comentario();
     }
 
-    public long getCarimboTempo() {
-        return carimbotempo;
+    public LocalTime getCarimboTempo() {
+        Clock clock = Clock.systemDefaultZone();
+        LocalTime horaAtual = LocalTime.now(clock);
+        return horaAtual;
     }
 
     public void display() {
         System.out.println("ID: " + id);
         System.out.println("Username: " + username);
         System.out.println("Gostos: " + gostos);
-        System.out.println("Carimbo de Tempo: " + carimbotempo);
+        System.out.println("Carimbo de Tempo: " + getCarimboTempo());
+
+        // Print all comments
+        for (Comentario comentario : comentarios) {
+            System.out.println("Comentário: " + comentario.getTexto());
+        }
     }
 }
+
 
 

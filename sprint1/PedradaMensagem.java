@@ -11,4 +11,10 @@ public class PedradaMensagem extends Pedrada{
     public String getTexto() {
         return mensagem;
     }
+
+    @Override
+    public void display() {
+        super.display();
+        System.out.println("Mensagem: " + getTexto());
+    }
 }

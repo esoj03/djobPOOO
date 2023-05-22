@@ -29,5 +29,46 @@ public class PedradaEvento extends Pedrada{
     public String getLocal() {
         return local;
     }
+
+    public TipoEvento getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(TipoEvento tipo) {
+        this.tipo = tipo;
+    }
+
+    public double getEntrada() {
+        return entrada;
+    }
+
+    public void setEntrada(double entrada) {
+        this.entrada = entrada;
+    }
+
+    public boolean isDisponivel() {
+        return status.equals("Disponível");
+    }
+
+    public void setDisponivel(boolean disponivel) {
+        if (disponivel) {
+            status = "Disponível";
+        } else {
+            status = "Indisponível";
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "PedradaEvento{" +
+                ", tipo=" + tipo +
+                ", data=" + data +
+                ", local='" + local + '\'' +
+                ", entrada=" + entrada +
+                ", status='" + status + '\'' +
+                '}';
+    }
+
 }
+
 

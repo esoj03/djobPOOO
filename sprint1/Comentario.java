@@ -1,4 +1,5 @@
 package sprint1;
+
 import java.time.LocalDateTime;
 
 public class Comentario {
@@ -6,14 +7,19 @@ public class Comentario {
     private LocalDateTime dataHora;
     private int gostos;
 
-    public Comentario() {
+    public Comentario(String texto, LocalDateTime dataHora, int gostos) {
         this.texto = texto;
-        this.dataHora = LocalDateTime.now();
-        this.gostos = 0;
+        this.dataHora = dataHora;
+        this.gostos = gostos;
     }
 
+    public Comentario() {
+
+    }
+
+
     public Comentario responder(String textoResposta) {
-        return new Comentario();
+        return new Comentario(textoResposta, dataHora, gostos);
     }
 
     public void gosto() {
@@ -49,4 +55,13 @@ public class Comentario {
     public void setGostos(int gostos) {
         this.gostos = gostos;
     }
+
+    public String toString() {
+        return "Comentario{" +
+                "texto='" + getTexto() + '\'' +
+                ", dataHora=" + getDataHora() +
+                ", gostos=" + getGostos() +
+                '}';
+    }
 }
+

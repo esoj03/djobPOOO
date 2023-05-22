@@ -1,5 +1,7 @@
 package sprint1;
 
+import java.util.List;
+
 public class Estudante extends Isecmarini{
     private int codigo;
     private String curso;
@@ -8,8 +10,10 @@ public class Estudante extends Isecmarini{
     private String status;
 
     // Construtor
-    public Estudante(int codigo, String curso, int anomatricula, int anocurso, String status) {
-        super();
+
+
+    public Estudante(String username, String email, String nome, String apelido, String pseudonome, String alcunha, String password, boolean visivel, List<String> interesses, PedradaDigital pedradaDigital, int codigo, String curso, int anomatricula, int anocurso, String status) {
+        super(username, email, nome, apelido, pseudonome, alcunha, password, visivel, interesses, pedradaDigital);
         this.codigo = codigo;
         this.curso = curso;
         this.anomatricula = anomatricula;
@@ -62,8 +66,13 @@ public class Estudante extends Isecmarini{
     public void mandaPaTurma() {
         System.out.println("Mandando mensagem para a turma...");
         // Lógica para enviar mensagem para a turma
-    }
 
+        // Exemplo de código para enviar mensagem para a turma
+        List<String> colegas = (List<String>) this.getPedradaDigital();
+        for (String colega : colegas) {
+            System.out.println("Enviando mensagem para " + colega);
+        }
+    }
 
 
 }

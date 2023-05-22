@@ -35,18 +35,18 @@ public class PedradaDigital {
     public void signin(String username) {
         if (comunidade.contains(username)) {
             currentUser = username;
-            System.out.println("Usuário " + username + " logado com sucesso.");
+            System.out.println("Utilizador " + username + " logado com sucesso.");
         } else {
-            System.out.println("Usuário não encontrado na comunidade.");
+            System.out.println("Utilizador não encontrado na comunidade.");
         }
     }
 
     public void signoff() {
         if (currentUser != null) {
             currentUser = null;
-            System.out.println("Usuário deslogado com sucesso.");
+            System.out.println("Utilizador deslogado com sucesso.");
         } else {
-            System.out.println("Nenhum usuário logado.");
+            System.out.println("Nenhum utilizador logado.");
         }
     }
 
@@ -110,30 +110,30 @@ public class PedradaDigital {
     }
 
     public void listAllUsers() {
-        if (comunidade.isEmpty()) {
-            System.out.println("Nenhum usuário cadastrado.");
+        if (getComunidade().isEmpty()) {
+            System.out.println("Nenhum utilizador cadastrado.");
         } else {
-            for (String username : comunidade) {
+            for (String username : getComunidade()) {
                 System.out.println(username);
             }
         }
     }
 
     public void listAllGroups() {
-        if (grupos.isEmpty()) {
+        if (getGrupos().isEmpty()) {
             System.out.println("Nenhum grupo cadastrado.");
         } else {
-            for (String groupName : grupos) {
+            for (String groupName : getGrupos()) {
                 System.out.println(groupName);
             }
         }
     }
 
     public void listAllEvents() {
-        if (eventos.isEmpty()) {
+        if (getEventos().isEmpty()) {
             System.out.println("Nenhum evento cadastrado.");
         } else {
-            for (String eventName : eventos) {
+            for (String eventName : getEventos()) {
                 System.out.println(eventName);
             }
         }

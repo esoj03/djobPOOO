@@ -1,12 +1,21 @@
 package sprint1;
 
+import java.util.Collections;
+import java.util.List;
+
 public class Professor extends Isecmarini{
     private String area;
     private String grau;
     private String departamento;
 
     // Construtor
-    public Professor(String area, String grau, String departamento) {
+
+
+    public Professor(String username, String email, String nome,
+                     String apelido, String pseudonome, String alcunha, String password, boolean visivel,
+                     List<String> interesses, PedradaDigital pedradaDigital, String area, String grau, String departamento) {
+        super(username, email, nome, apelido, pseudonome, alcunha, password, visivel,
+                Collections.singletonList(interesses.toString()), pedradaDigital);
         this.area = area;
         this.grau = grau;
         this.departamento = departamento;
@@ -38,8 +47,13 @@ public class Professor extends Isecmarini{
     }
 
     // Método mandaColegas
+    // Lógica para enviar mensagem para os colegas
     public void mandaColegas() {
         System.out.println("Enviando mensagem para os colegas...");
-        // Lógica para enviar mensagem para os colegas
+        List<String> colegas = this.getPedradaDigital().getComunidade();
+        for (String colega : colegas) {
+            System.out.println("Mensagem enviado para " + colega);
+        }
     }
 }
+
